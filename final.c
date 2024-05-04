@@ -10,6 +10,13 @@
 //dimimage()
 //brightenimage()
 
+//Kace (load image and display image)
+int loadimage(double
+
+//Reese (editimage and cropimage)
+
+//Althea (dimimage and brightenimage)
+
 
 int main() {
 
