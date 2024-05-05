@@ -104,6 +104,9 @@ int main() {
 	case 3:
 		editImage(pixelValues, rows, cols);
 		break;
+	case 4:
+		printf("closing program...\n");\
+		break;
 	default:
 		printf("Invalid choice. Please try again.\n");
 		}
