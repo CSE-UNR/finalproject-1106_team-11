@@ -51,7 +51,7 @@ char brightnessChars[] = {' ', '.', 'o', 'O', '0'};
 	char displayChar;
 	switch (brightness) {
 	case 0:
-		displayChar = ' ';
+		displayChar = '.';
 		break;
 	case 1:
 		displayChar = '.';
@@ -91,10 +91,6 @@ int main() {
 		printf("1. Load a new image\n");
 		printf("2. Display the current image\n");
 		printf("3. Edit the current image\n");
-		printf("4. Crop the current image\n");
-		printf("5. Dim the current image\n");
-		printf("6. Brighten the current image\n");
-		printf("7. Exit the program\n");
 		printf("Enter your choice: ");
 	scanf("%d", &choice);
 
