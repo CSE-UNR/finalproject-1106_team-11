@@ -10,12 +10,11 @@
 
 #include <stdio.h>
 #define MAX_SIZE 1000
-// Kace
+
 // Function to load a new image from a file
-void loadImage() {
+void loadImage(int pixelValues[MAX_SIZE][MAX_SIZE], int *rows, int *cols) {
 	char fileName[MAX_SIZE];
 	FILE *file;
-	int pixelValues[MAX_SIZE][MAX_SIZE]; // Assuming a maximum size for the image
 
 	printf("Enter the file name to load the image from: ");
 	scanf("%s", fileName);
@@ -26,74 +25,93 @@ void loadImage() {
 	return;
 }
 
-	// Read pixel values from the file
-	// Example: Assuming the file contains pixel values in a format like "0 1 2 3 4 ..."
-int rows, cols;
-	fscanf(file, "%d %d", &rows, &cols); // Assuming the first line in the file contains rows and columns information
+	fscanf(file, "%d %d", rows, cols);
 
-	for (int i = 0; i < rows; i++) {
-		for (int j = 0; j < cols; j++) {
-			fscanf(file, "%d", &pixelValues[i][j]);
+	for (int i = 0; i < *rows; i++) {
+		for (int j = 0; j < *cols; j++) {
+		fscanf(file, "%d", &pixelValues[i][j]);
+	}
 }
-}
-
-	// Process the pixel values as needed
-	// You can display, edit, or perform other operations on the loaded image here
 
 	printf("Image loaded successfully.\n");
 
-	fclose(file);
+fclose(file);
 }
 
-// Kace
 // Function to display the current image
 void displayImage(int pixelValues[MAX_SIZE][MAX_SIZE], int rows, int cols) {
-	char brightnessChars[] = {' ', '.', 'o', 'O', '0'};
-    
+char brightnessChars[] = {' ', '.', 'o', 'O', '0'};
+
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++) {
 			int brightness = pixelValues[i][j];
-			printf("%c ", brightnessChars[brightness]);
-			}
-		printf("\n");
-		}
+
+// Map brightness values to characters based on the provided table
+
+	char displayChar;
+	switch (brightness) {
+	case 0:
+		displayChar = ' ';
+		break;
+	case 1:
+		displayChar = '.';
+		break;
+	case 2:
+		displayChar = 'o';
+		break;
+	case 3:
+		displayChar = 'O';
+		break;
+	case 4:
+		displayChar = '0';
+		break;
+	default:
+		displayChar = ' '; // Handle unknown brightness values
 	}
 
-// Reese
+		printf("%c ", displayChar);
+	}
+		printf("\n");
+	}
+}
 
-// Althea
+// Function to edit the current image
+void editImage(int pixelValues[MAX_SIZE][MAX_SIZE], int rows, int cols) {
+// Add your image editing logic here
+printf("Options:\n");
+}
 
 int main() {
 	int choice;
-	
-	do {
+	int pixelValues[MAX_SIZE][MAX_SIZE];
+	int rows = 0, cols = 0;
 
-		// Display the menu options
-		printf("Menu Options:\n");
+	do {
+		printf("\nMenu Options:\n");
 		printf("1. Load a new image\n");
 		printf("2. Display the current image\n");
 		printf("3. Edit the current image\n");
-		printf("4. Exit the program\n");
+		printf("4. Crop the current image\n");
+		printf("5. Dim the current image\n");
+		printf("6. Brighten the current image\n");
+		printf("7. Exit the program\n");
 		printf("Enter your choice: ");
-		scanf("%d", &choice);
+	scanf("%d", &choice);
 
 	switch (choice) {
 	case 1:
-		loadImage();
+		loadImage(pixelValues, &rows, &cols);
 		break;
 	case 2:
-		displayImage();
+		displayImage(pixelValues, rows, cols);
 		break;
 	case 3:
-		printf("Test Fuction");
-		break;
-	case 4:
-		printf("Test Fuction");
+		editImage(pixelValues, rows, cols);
 		break;
 	default:
 		printf("Invalid choice. Please try again.\n");
 		}
-	} while (choice != 4);
+	} while (choice != 7);
 
-    return 0;
+return 0;
 }
