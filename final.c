@@ -1,14 +1,16 @@
 //Names: Kace Alejandro,
-//Date:
+//Date: 5/5/2024
 //Class: CS 135.1106
 //Purpose: Image reading group project
 
 //Add editimage()
-//cropimage()
-//dimimage()
-//brightenimage()
+		//implement these within the editimage() case.
+	//cropimage()
+	//dimimage()
+	//brightenimage()
 
 #include <stdio.h>
+#include <stdbool.h>
 #define MAX_SIZE 1000
 
 // Function to load a new image from a file
@@ -51,7 +53,7 @@ char brightnessChars[] = {' ', '.', 'o', 'O', '0'};
 	char displayChar;
 	switch (brightness) {
 	case 0:
-		displayChar = '.';
+		displayChar = ' ';
 		break;
 	case 1:
 		displayChar = '.';
@@ -66,9 +68,8 @@ char brightnessChars[] = {' ', '.', 'o', 'O', '0'};
 		displayChar = '0';
 		break;
 	default:
-		displayChar = ' '; // Handle unknown brightness values
+		displayChar = ' '; // Unknown brightness values will just be space.
 	}
-
 		printf("%c ", displayChar);
 	}
 		printf("\n");
@@ -79,6 +80,7 @@ char brightnessChars[] = {' ', '.', 'o', 'O', '0'};
 void editImage(int pixelValues[MAX_SIZE][MAX_SIZE], int rows, int cols) {
 // Add your image editing logic here
 printf("Options:\n");
+
 }
 
 int main() {
@@ -87,11 +89,12 @@ int main() {
 	int rows = 0, cols = 0;
 
 	do {
-		printf("\nMenu Options:\n");
+		printf("\n***Image Loader***\n");
 		printf("1. Load a new image\n");
 		printf("2. Display the current image\n");
 		printf("3. Edit the current image\n");
-		printf("Enter your choice: ");
+		printf("4. Exit the program.\n");
+		printf("\nEnter your choice: ");
 	scanf("%d", &choice);
 
 	switch (choice) {
@@ -110,7 +113,7 @@ int main() {
 	default:
 		printf("Invalid choice. Please try again.\n");
 		}
-	} while (choice != 7);
+	} while (choice != 4);
 
 return 0;
 }
