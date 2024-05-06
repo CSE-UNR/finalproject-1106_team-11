@@ -90,13 +90,13 @@ void displayImage(int pixelValues[MAX_SIZE][MAX_SIZE], int rows, int cols) {
 void editImage(int pixelValues[MAX_SIZE][MAX_SIZE], int rows, int cols) {
 // Add your image editing logic here
 	int editSelect;
-
-	printf("\nOptions:\n");
-	printf("1. Crop image\n");
-	printf("2. Dim image\n");
-	printf("3. Brighten image\n");
-	printf("4. Go back\n"); 
-	scanf("%d ", &editSelect);
+	do {
+		printf("\nOptions:\n");
+		printf("1. Crop image\n");
+		printf("2. Dim image\n");
+		printf("3. Brighten image\n");
+		printf("4. Go back\n"); 
+		scanf("%d ", &editSelect);
 
 	switch (editSelect) {
 		case 1:
@@ -110,7 +110,10 @@ void editImage(int pixelValues[MAX_SIZE][MAX_SIZE], int rows, int cols) {
 			break;
 		case 4:
 			break;
-	}
+		default:
+			printf("Invalid choice. Please try again.\n");
+		}
+	} while (editSelect != 4);
 }
 
 int main() {
