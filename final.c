@@ -3,6 +3,11 @@
 //Class: CS 135.1106
 //Purpose: Image reading group project
 
+// OUTLINE I HAVE SET UP
+
+//libraries and define
+
+// FUNCTIONS
 //Add loadimage() "I think it works"
 //Add displayimage() "Doesn't display what I want"
 //Add editimage() "implemented."
@@ -10,6 +15,9 @@
 	//cropimage()
 	//dimimage()
 	//brightenimage()
+
+// MAIN function
+
 
 #include <stdio.h>
 #include <stdbool.h>
