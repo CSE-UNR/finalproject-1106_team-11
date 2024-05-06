@@ -96,17 +96,22 @@ void editImage(int pixelValues[MAX_SIZE][MAX_SIZE], int rows, int cols) {
 		printf("2. Dim image\n");
 		printf("3. Brighten image\n");
 		printf("4. Go back\n"); 
+		
+		printf("Enter your selection: ");
 		scanf("%d ", &editSelect);
 
 	switch (editSelect) {
 		case 1:
 			//cropImage function
+			printf("test");
 			break;
 		case 2:	
 			//dimImage function
+			printf("test");
 			break;
 		case 3:
 			//brightenImage function
+			printf("test");
 			break;
 		case 4:
 			break;
