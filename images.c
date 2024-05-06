@@ -85,11 +85,17 @@ void displayImage(int pixelValues[MAX_SIZE][MAX_SIZE], int rows, int cols) {
 		printf("\n");
 	}
 }
-
+void dimImage(int pixelValues[MAX_SIZE][MAX_SIZE], int rows, int cols) {
+}
+void brightenImage (int pixelValues[MAX_SIZE][MAX_SIZE], int rows, int cols) {
+}
+//https://github.com/CSE-UNR/finalproject-1106_team-11.git
 // Function to edit the current image
 void editImage(int pixelValues[MAX_SIZE][MAX_SIZE], int rows, int cols) {
+
 // Add your image editing logic here
 	int editSelect;
+	int factor;
 	do {
 		printf("\nOptions:\n");
 		printf("1. Crop image\n");
@@ -107,10 +113,29 @@ void editImage(int pixelValues[MAX_SIZE][MAX_SIZE], int rows, int cols) {
 			break;
 		case 2:	
 			//dimImage function
+			for (int cols =0; cols < MAX_SIZE; cols ++){
+				for (int rows =0; rows < MAX_SIZE; rows ++){
+				pixelValues[rows][cols] += factor; 
+				if (pixelValues [rows][cols] < 0){ 
+					pixelValues[rows][cols] = 0;
+			printf(" %d", pixelValues);
+					}
+				}
+			}
+			
 			printf("test");
 			break;
 		case 3:
 			//brightenImage function
+			for (int cols =0; cols < MAX_SIZE; cols ++){
+				for (int rows =0; rows < MAX_SIZE; rows ++){
+				pixelValues[rows][cols] += factor; 
+				if (pixelValues [rows][cols] < 255 ){ 
+					pixelValues[rows][cols] = 255;
+			printf(" %d", pixelValues);
+					}
+				}
+			}
 			printf("test");
 			break;
 		case 4:
@@ -118,13 +143,14 @@ void editImage(int pixelValues[MAX_SIZE][MAX_SIZE], int rows, int cols) {
 		default:
 			printf("Invalid choice. Please try again.\n");
 		}
-	} while (editSelect != 4);
-}
+	} while (editSelect != 4); }
 
 int main() {
 	int choice;
 	int pixelValues[MAX_SIZE][MAX_SIZE];
 	int rows = 0, cols = 0;
+	int dimFactor = 0.5; 
+	int brightenFactor = 1.5; 
 
 	do {
 		printf("\n***Image Loader***\n");
