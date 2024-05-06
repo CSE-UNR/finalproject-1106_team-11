@@ -3,7 +3,9 @@
 //Class: CS 135.1106
 //Purpose: Image reading group project
 
-//Add editimage()
+//Add loadimage() "I think it works"
+//Add displayimage() "Doesn't display what I want"
+//Add editimage() "implemented."
 		//implement these within the editimage() case.
 	//cropimage()
 	//dimimage()
@@ -42,8 +44,8 @@ fclose(file);
 
 // Function to display the current image
 void displayImage(int pixelValues[MAX_SIZE][MAX_SIZE], int rows, int cols) {
-char brightnessChars[] = {' ', '.', 'o', 'O', '0'};
-
+	char brightnessChars[] = {' ', '.', 'o', 'O', '0'};
+	
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++) {
 			int brightness = pixelValues[i][j];
@@ -79,8 +81,28 @@ char brightnessChars[] = {' ', '.', 'o', 'O', '0'};
 // Function to edit the current image
 void editImage(int pixelValues[MAX_SIZE][MAX_SIZE], int rows, int cols) {
 // Add your image editing logic here
-printf("Options:\n");
+	int editSelect;
 
+	printf("\nOptions:\n");
+	printf("1. Crop image\n");
+	printf("2. Dim image\n");
+	printf("3. Brighten image\n");
+	printf("4. Go back\n"); 
+	scanf("%d ", &editSelect);
+
+	switch (editSelect) {
+		case 1:
+			//cropImage function
+			break;
+		case 2:	
+			//dimImage function
+			break;
+		case 3:
+			//brightenImage function
+			break;
+		case 4:
+			break;
+	}
 }
 
 int main() {
