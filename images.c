@@ -100,6 +100,7 @@ void cropImage(int pixelValues[MAX_SIZE][MAX_SIZE], int *row, int *col){
 		for(col = 21; col < 1000; col++){
 			fprintf(fp22," ");
 		}
+		fclose(fp22);
 }
 void dimImage(int pixelValues[MAX_SIZE][MAX_SIZE], int rows, int cols) {
 }
