@@ -1,22 +1,7 @@
 //Names: Kace Alejandro, Reese Malley, and Althea Macon
 //Date: 5/5/2024
 //Class: CS 135.1106
-//Purpose: Image reading group project
-
-// OUTLINE I HAVE SET UP
-
-//libraries and define
-
-// FUNCTIONS
-//Add loadimage() "I think it works"
-//Add displayimage() "Doesn't display what I want"
-//Add editimage() "implemented."
-		//implement these within the editimage() case.
-	//cropimage()
-	//dimimage()
-	//brightenimage()
-
-// MAIN function
+//Purpose: Image Reading Group Project
 
 
 #include <stdio.h>
@@ -128,7 +113,7 @@ int editImage(int pixelValues[MAX_SIZE][MAX_SIZE], int rows, int cols) {
 			cropImage();
 			break;
 		case 2:	
-			//dimImage function
+			dimImage();
 			for (int cols =0; cols < MAX_SIZE; cols ++){
 				for (int rows =0; rows < MAX_SIZE; rows ++){
 				pixelValues[rows][cols] += factor; 
@@ -142,7 +127,7 @@ int editImage(int pixelValues[MAX_SIZE][MAX_SIZE], int rows, int cols) {
 			printf("test");
 			break;
 		case 3:
-			//brightenImage function
+			brightenImage();
 			for (int cols =0; cols < MAX_SIZE; cols ++){
 				for (int rows =0; rows < MAX_SIZE; rows ++){
 				pixelValues[rows][cols] += factor; 
