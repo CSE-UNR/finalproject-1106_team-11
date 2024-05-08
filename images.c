@@ -1,4 +1,4 @@
-//Names: Kace Alejandro,
+//Names: Kace Alejandro, Reese Malley, and Althea Macon
 //Date: 5/5/2024
 //Class: CS 135.1106
 //Purpose: Image reading group project
@@ -85,13 +85,29 @@ void displayImage(int pixelValues[MAX_SIZE][MAX_SIZE], int rows, int cols) {
 		printf("\n");
 	}
 }
+void cropImage(int pixelValues[MAX_SIZE][MAX_SIZE], int *row, int *col){
+		FILE *fp22;
+		fp22 = fopen("test_image.txt", "r");
+		for(row = 0; row < 1000; row++){
+			fprintf(fp22," ");
+		}
+		for(row = 12; row < 1000; row++){
+			fprintf(fp22," ");
+		}
+		for(col = 0; col < 1000; col++){
+			fprintf(fp22," ");
+		}
+		for(col = 21; col < 1000; col++){
+			fprintf(fp22," ");
+		}
+}
 void dimImage(int pixelValues[MAX_SIZE][MAX_SIZE], int rows, int cols) {
 }
 void brightenImage (int pixelValues[MAX_SIZE][MAX_SIZE], int rows, int cols) {
 }
 //https://github.com/CSE-UNR/finalproject-1106_team-11.git
 // Function to edit the current image
-void editImage(int pixelValues[MAX_SIZE][MAX_SIZE], int rows, int cols) {
+int editImage(int pixelValues[MAX_SIZE][MAX_SIZE], int rows, int cols) {
 
 // Add your image editing logic here
 	int editSelect;
@@ -108,8 +124,7 @@ void editImage(int pixelValues[MAX_SIZE][MAX_SIZE], int rows, int cols) {
 
 	switch (editSelect) {
 		case 1:
-			//cropImage function
-			printf("test");
+			cropImage();
 			break;
 		case 2:	
 			//dimImage function
@@ -118,7 +133,7 @@ void editImage(int pixelValues[MAX_SIZE][MAX_SIZE], int rows, int cols) {
 				pixelValues[rows][cols] += factor; 
 				if (pixelValues [rows][cols] < 0){ 
 					pixelValues[rows][cols] = 0;
-			printf(" %d", pixelValues);
+			printf("%p", pixelValues);
 					}
 				}
 			}
@@ -132,7 +147,7 @@ void editImage(int pixelValues[MAX_SIZE][MAX_SIZE], int rows, int cols) {
 				pixelValues[rows][cols] += factor; 
 				if (pixelValues [rows][cols] < 255 ){ 
 					pixelValues[rows][cols] = 255;
-			printf(" %d", pixelValues);
+			printf(" %p", pixelValues);
 					}
 				}
 			}
@@ -161,22 +176,21 @@ int main() {
 		printf("\nEnter your choice: ");
 	scanf("%d", &choice);
 
-	switch (choice) {
-	case 1:
+	if(choice == 1){
 		loadImage(pixelValues, &rows, &cols);
-		break;
-	case 2:
+	}
+	else if(choice == 2){
 		displayImage(pixelValues, rows, cols);
-		break;
-	case 3:
+	}
+	else if(choice == 3){
 		editImage(pixelValues, rows, cols);
-		break;
-	case 4:
+	}
+	else if(choice == 4){
 		printf("closing program...\n");\
-		break;
-	default:
+	}
+	else{
 		printf("Invalid choice. Please try again.\n");
-		}
+	}
 	} while (choice != 4);
 
 return 0;
