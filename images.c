@@ -73,16 +73,16 @@ void displayImage(int pixelValues[MAX_SIZE][MAX_SIZE], int rows, int cols) {
 void cropImage(int pixelValues[MAX_SIZE][MAX_SIZE], int *row, int *col){
 		FILE *fp22;
 		fp22 = fopen("test_image.txt", "r");
-		for(row = 0; row < 1000; row++){
+		for(row = 0; row < MAX_SIZE; row++){
 			fprintf(fp22," ");
 		}
-		for(row = 12; row < 1000; row++){
+		for(row = 12; row < MAX_SIZE; row++){
 			fprintf(fp22," ");
 		}
-		for(col = 0; col < 1000; col++){
+		for(col = 0; col < MAX_SIZE; col++){
 			fprintf(fp22," ");
 		}
-		for(col = 21; col < 1000; col++){
+		for(col = 21; col < MAX_SIZE; col++){
 			fprintf(fp22," ");
 		}
 		fclose(fp22);
